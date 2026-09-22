@@ -276,3 +276,125 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picsur - Product Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .picsur-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+    }
+    .picsur-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 15%, rgba(15, 23, 42, 0.4) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+    }
+    .picsur-card:hover .picsur-overlay,
+    .picsur-card.active .picsur-overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-6 font-sans">
+
+  <header class="max-w-6xl mx-auto mb-8 text-center">
+    <h1 class="text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">
+      picsur.app Collection
+    </h1>
+    <p class="text-slate-400 text-sm">Tap, click, or hover over any image to display product details and buyer comments without losing sight of the picture.</p>
+  </header>
+
+  <main class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <!-- 1. Phone -->
+    <div class="picsur-card group cursor-pointer" onclick="this.classList.toggle('active')">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" 
+           alt="Smartphone" class="w-full h-80 object-cover group-hover:scale-105 transition duration-300">
+      <div class="picsur-overlay">
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-bold text-blue-300">Flagship Smartphone</span>
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded font-semibold">$999</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+          6.7-inch OLED display, triple-lens camera array, 512GB storage, all-day battery performance.
+        </p>
+        <div class="flex justify-between items-center text-[11px] text-slate-400 pt-2 border-t border-slate-700/60">
+          <span>💬 28 Comments</span>
+          <span class="text-blue-400 font-medium">Add Comment →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Camera -->
+    <div class="picsur-card group cursor-pointer" onclick="this.classList.toggle('active')">
+      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" 
+           alt="Mirrorless Camera" class="w-full h-80 object-cover group-hover:scale-105 transition duration-300">
+      <div class="picsur-overlay">
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-bold text-blue-300">Mirrorless Camera</span>
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded font-semibold">$1,450</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+          24.2MP full-frame sensor, 4K 60fps video recording, fast autofocus with subject tracking.
+        </p>
+        <div class="flex justify-between items-center text-[11px] text-slate-400 pt-2 border-t border-slate-700/60">
+          <span>💬 15 Comments</span>
+          <span class="text-blue-400 font-medium">Add Comment →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Automobile -->
+    <div class="picsur-card group cursor-pointer" onclick="this.classList.toggle('active')">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" 
+           alt="Sports Automobile" class="w-full h-80 object-cover group-hover:scale-105 transition duration-300">
+      <div class="picsur-overlay">
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-bold text-blue-300">Luxury Coupe</span>
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded font-semibold">$64,000</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+          Twin-turbo V6 engine, leather interior, adaptive suspension, premium audio package.
+        </p>
+        <div class="flex justify-between items-center text-[11px] text-slate-400 pt-2 border-t border-slate-700/60">
+          <span>💬 42 Comments</span>
+          <span class="text-blue-400 font-medium">Add Comment →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Shoes & Clothing -->
+    <div class="picsur-card group cursor-pointer" onclick="this.classList.toggle('active')">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" 
+           alt="Sneakers & Apparel" class="w-full h-80 object-cover group-hover:scale-105 transition duration-300">
+      <div class="picsur-overlay">
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-bold text-blue-300">Runner Sneakers</span>
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded font-semibold">$120</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+          Lightweight breathable mesh, cushioned foam sole, high-durability rubber grip outsole.
+        </p>
+        <div class="flex justify-between items-center text-[11px] text-slate-400 pt-2 border-t border-slate-700/60">
+          <span>💬 9 Comments</span>
+          <span class="text-blue-400 font-medium">Add Comment →</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
